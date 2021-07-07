@@ -14,16 +14,17 @@ public class Materia {
         for (int i = 0; i < notas.length; i++) {
             this.notas[i] = new Nota(notas[i]);
         }
-        this.promedioAjustado = this.calcularPromedio();
         this.peorNota = this.obtenerPeorNota();
+        this.promedioAjustado = this.calcularPromedio();
     }
 
     private double calcularPromedio() {
         double sumatoria = 0;
-        for (int i = 1; i < this.notas.length; i++) {
+        for (int i = 0; i < this.notas.length; i++) {
             sumatoria += this.notas[i].getEscalaCinco();
         }
         double promedio = (sumatoria-this.peorNota)/(this.notas.length-1);
+        promedio = Math.round(promedio*100.0)/100.0;
         return promedio;
     }
 
@@ -40,6 +41,7 @@ public class Materia {
         for (Nota nota : this.notas) {
             nota.mostrarEnConsola();
         }
+        System.out.println("-------------------");
         System.out.println("Peor nota: " + this.peorNota);
         System.out.println("Promedio ajustado: " + this.promedioAjustado);
     }

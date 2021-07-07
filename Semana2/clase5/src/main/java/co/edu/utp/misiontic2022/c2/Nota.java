@@ -24,7 +24,7 @@ public class Nota {
     Nota(int escalaCien) {
         this.nombre = "Sin nombre";
         this.escalaCien = escalaCien;
-        this.escalaCinco = escalaCien/20.0;
+        this.escalaCinco = escalaCien/20.00;
         this.cualitativo = escalaCien >= 60 ? "Aprobado" : "Reprobado";
     }
 
@@ -77,7 +77,7 @@ public class Nota {
     public void setEscalaCinco(double escalaCinco) {
         this.escalaCinco = escalaCinco;    
     }
-    
+
     public void setCualitativo(String cualitativo) {
         this.cualitativo = cualitativo;    
     }
