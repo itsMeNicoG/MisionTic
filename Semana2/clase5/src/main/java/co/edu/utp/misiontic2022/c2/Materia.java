@@ -7,8 +7,21 @@ public class Materia {
     private double promedioAjustado;
     private Nota[] notas;
     private double peorNota;
+    private Estudiante estudiante;
 
     Materia(String nombre, int[] notas) {
+        this.nombre = nombre;
+        this.notas = new Nota[notas.length];
+        for (int i = 0; i < notas.length; i++) {
+            this.notas[i] = new Nota(notas[i]);
+        }
+        this.peorNota = this.obtenerPeorNota();
+        this.promedioAjustado = this.calcularPromedio();
+        this.estudiante = new Estudiante();
+    }
+
+    Materia(Estudiante estudiante, String nombre, int[] notas) {
+        this.estudiante = estudiante;
         this.nombre = nombre;
         this.notas = new Nota[notas.length];
         for (int i = 0; i < notas.length; i++) {
@@ -44,6 +57,15 @@ public class Materia {
         System.out.println("-------------------");
         System.out.println("Peor nota: " + this.peorNota);
         System.out.println("Promedio ajustado: " + this.promedioAjustado);
+        this.estudiante.mostrarInformacion();
+    }
+
+    public Estudiante getEstudiante() {
+        return this.estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
 }
