@@ -9,6 +9,16 @@ public class Materia {
     private double peorNota;
     private Estudiante estudiante;
 
+    public Materia(){
+        nombre = "Nombre sin asignar";
+        promedioAjustado = 0.0;
+        estudiante = new Estudiante();
+        notas = new Nota[5];
+        for (int i = 0; i < notas.length; i++) {
+            notas[i] = new Nota();
+        }
+    }
+
     Materia(String nombre, int[] notas) {
         this.nombre = nombre;
         this.notas = new Nota[notas.length];
