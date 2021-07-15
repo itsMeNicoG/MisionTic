@@ -55,7 +55,7 @@ public class InterfazConsola {
 
     public void ejecutarMainLoop(){
         boolean continuar = true;
-        do {
+        while(continuar) {
             int opcion = mostrarMenu();
             switch(opcion) {
                 case 1:
@@ -78,8 +78,7 @@ public class InterfazConsola {
                     System.out.println("Saliendo...");
                     break;
             }
-
-        } while(continuar);
+        }
     }
 
     public static void main(String[] args) {
