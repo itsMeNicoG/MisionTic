@@ -27,7 +27,7 @@ public class Verdura {
     public double calcularPrecio(){ 
         double precioVenta = 0;
         if (this.importada) {
-            precioVenta = (this.precioBase * this.gramosVenta) + (this.precioBase * this.gramosVenta) * 0.10;
+            precioVenta = (this.precioBase * this.gramosVenta) + ((this.precioBase * this.gramosVenta) * 0.10);
         } else {
             precioVenta = this.precioBase * this.gramosVenta;
         }
@@ -49,6 +49,8 @@ public class Verdura {
     public void setPrecioBase(double precioBase) {
         this.precioBase = precioBase;
     } 
+
+    
 
     public void mostrarEnConsola(){
         System.out.println();
